@@ -33,8 +33,15 @@ RUN apt-get update -qq && \
             uuid \
             uuid-dev \
             xmlstarlet \
+            unixodbc \
+            unixodbc-dev \
+            libmyodbc \
+            python-dev \
+            python-pip \
+            python-mysqldb \
             && \
-    apt-get purge -y --auto-remove && rm -rf /var/lib/apt/lists/*
+    apt-get purge -y --auto-remove && rm -rf /var/lib/apt/lists/* && \
+    pip install alembic
 
 ENV ASTERISK_VERSION=13.11.0
 COPY build-asterisk.sh /build-asterisk
