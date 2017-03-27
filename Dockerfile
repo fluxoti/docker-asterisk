@@ -6,6 +6,9 @@ RUN useradd --system asterisk
 RUN apt-get update -qq && \
     DEBIAN_FRONTEND=noninteractive \
     apt-get install -y --no-install-recommends \
+            subversion \
+            automake \
+            aptitude \
             autoconf \
             binutils-dev \
             build-essential \
@@ -39,11 +42,12 @@ RUN apt-get update -qq && \
             python-dev \
             python-pip \
             python-mysqldb \
+            git \
             && \
     apt-get purge -y --auto-remove && rm -rf /var/lib/apt/lists/* && \
     pip install alembic
 
-ENV ASTERISK_VERSION=13.11.0
+ENV ASTERISK_VERSION=14.3.0 PJPROJECT_VERSION=2.5.5
 COPY build-asterisk.sh /build-asterisk
 RUN /build-asterisk
 

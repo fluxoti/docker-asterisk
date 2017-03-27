@@ -1,3 +1,3 @@
 # Asterisk
 
-Dockerfile to build [Asterisk](https://github.com/asterisk/asterisk) 13 with PJSIP Realtime.
+Dockerfile to build [Asterisk](https://github.com/asterisk/asterisk) 14 with PJSIP Realtime.
